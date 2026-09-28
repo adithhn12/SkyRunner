@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://bgoytfam8csae"]
+
+[ext_resource type="Script" uid="uid://bopam15kos58f" path="res://high_scores.gd" id="1_88626"]
+[ext_resource type="Texture2D" uid="uid://bab6medw4jjdg" path="res://assets/highscores.png" id="2_irtx4"]
+
+[node name="HighScores" type="Control" unique_id=539058142]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_88626")
+
+[node name="Background" type="TextureRect" parent="." unique_id=409575477]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_irtx4")
+expand_mode = 1
+
+[node name="ScoreList" type="VBoxContainer" parent="." unique_id=635064211]
+layout_mode = 0
+offset_left = 382.0
+offset_top = 216.0
+offset_right = 562.0
+offset_bottom = 373.0
+
+[node name="BackButton" type="Button" parent="." unique_id=1930784477]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 37.0
+offset_top = 30.0
+offset_right = 166.0
+offset_bottom = 71.0
+text = "BACK"
+
+[node name="ResetButton" type="Button" parent="." unique_id=1573279504]
+layout_mode = 0
+offset_left = 997.0
+offset_top = 602.0
+offset_right = 1142.0
+offset_bottom = 638.0
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 20
+text = "RESET SCORES"
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="ResetButton" to="." method="_on_reset_button_pressed"]

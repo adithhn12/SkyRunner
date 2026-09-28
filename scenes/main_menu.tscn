@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://7ya4f1ryoo5x"]
+
+[ext_resource type="Script" uid="uid://byt0xhyvu2e40" path="res://scenes/main_menu.gd" id="1_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://lar5agb4eohp" path="res://assets/mainmenu.png" id="1_l6cm7"]
+
+[node name="MainMenu" type="Control" unique_id=1737937304]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ekxnf")
+
+[node name="Background" type="TextureRect" parent="." unique_id=321529802]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_l6cm7")
+expand_mode = 1
+
+[node name="PlayButton" type="Button" parent="." unique_id=1587098814]
+modulate = Color(0, 0.7411765, 0, 0)
+layout_mode = 0
+offset_left = 478.0
+offset_top = 374.0
+offset_right = 692.0
+offset_bottom = 417.0
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 25
+text = "PLAY"
+
+[node name="HighScoresButton" type="Button" parent="." unique_id=100256814]
+modulate = Color(0, 0.75372005, 0.26637447, 1)
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 475.0
+offset_top = 453.0
+offset_right = 697.0
+offset_bottom = 496.0
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 25
+text = "HIGH SCORES"
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="HighScoresButton" to="." method="_on_high_scores_button_pressed"]

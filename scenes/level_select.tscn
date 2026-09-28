@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://b035hsxyk7qrw"]
+
+[ext_resource type="Script" uid="uid://cotmq6vxtwiwp" path="res://scenes/level_select.gd" id="1_p0wlc"]
+[ext_resource type="Texture2D" uid="uid://dj4lrvswsoxn6" path="res://assets/levelselect.png" id="2_p0wlc"]
+
+[node name="LevelSelect" type="Control" unique_id=1628370938]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p0wlc")
+
+[node name="Background" type="TextureRect" parent="." unique_id=713433991]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_p0wlc")
+expand_mode = 1
+
+[node name="Level1Button" type="Button" parent="." unique_id=100701960]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 277.0
+offset_top = 268.0
+offset_right = 456.0
+offset_bottom = 433.0
+text = "Level 1"
+
+[node name="BackButton" type="Button" parent="." unique_id=868836210]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 41.0
+offset_top = 560.0
+offset_right = 166.0
+offset_bottom = 600.0
+text = "BACK"
+
+[connection signal="pressed" from="Level1Button" to="." method="_on_level_1_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
